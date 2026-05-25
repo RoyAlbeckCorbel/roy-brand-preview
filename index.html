@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roy Albeck — logos + fonts</title>
+<style>
+  @font-face{ font-family:'Aldone'; src:url('fonts/Aldone-Regular.woff2') format('woff2'); font-weight:400; }
+  @font-face{ font-family:'Aldone'; src:url('fonts/Aldone-Bold.woff2') format('woff2'); font-weight:700; }
+  @font-face{ font-family:'FreakGrotesk'; src:url('fonts/FREAKGrotesk-next-BOLD.otf') format('opentype'); }
+  @font-face{ font-family:'TerminalGrotesque'; src:url('fonts/TerminalGrotesque.woff2') format('woff2'); }
+  @font-face{ font-family:'Grotesk812'; src:url('fonts/Grotesk812-CondensedMedium.woff2') format('woff2'); }
+  @font-face{ font-family:'Conta'; src:url('fonts/Conta-Regular.woff2') format('woff2'); }
+  @font-face{ font-family:'ContaMono'; src:url('fonts/Conta-MonoRegular.woff2') format('woff2'); }
+  @font-face{ font-family:'Bmono'; src:url('fonts/bmono-regular.ttf') format('truetype'); }
+  @font-face{ font-family:'Hikaru'; src:url('fonts/HIKARUMONO-Regular.otf') format('opentype'); }
+  @font-face{ font-family:'Lilex'; src:url('fonts/LilexDuo-Regular.ttf') format('truetype'); }
+  @font-face{ font-family:'GeistPixelSquare'; src:url('fonts/GeistPixel-Square.woff2') format('woff2'); }
+  @font-face{ font-family:'GeistPixelGrid'; src:url('fonts/GeistPixel-Grid.woff2') format('woff2'); }
+
+  :root{ --dark:#10131C; --light:#FAF8F8; --red:#F0341B; --panel:#181B26; --muted:#8E93A3; --line:#262a37; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--dark); color:var(--light); font-family:ui-sans-serif,system-ui,sans-serif; -webkit-font-smoothing:antialiased; padding:28px 20px 70px; }
+  .wrap{ max-width:1100px; margin:0 auto; }
+  .eyebrow{ font:600 11px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
+  h1{ font-size:25px; letter-spacing:-.02em; margin:10px 0 6px; }
+  .sub{ margin:0 0 8px; color:var(--muted); font-size:14px; max-width:760px; }
+  .allfree{ display:inline-block; font:700 11px ui-monospace,monospace; color:var(--red); border:1px solid var(--red); border-radius:6px; padding:4px 9px; margin:8px 0 4px; }
+  h2.sec{ font:700 13px ui-monospace,monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--light); margin:34px 0 14px; border-top:2px solid var(--red); padding-top:14px; }
+
+  /* logos */
+  .lock{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:30px 28px; margin-bottom:14px; }
+  .lock.light{ background:var(--light); border-color:#e6e3dd; color:var(--dark); }
+  .tag{ font:600 10px ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+  .lock.light .tag{ color:#8a8478; }
+  .lockrow{ display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .badge{ width:62px; height:62px; border-radius:14px; background:var(--red); display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .badge span{ font-family:'GeistPixelSquare'; font-size:24px; color:#fff; }
+  .wm{ font-size:50px; line-height:.9; } .wm .r{ color:var(--red); }
+  .cursor{ font-family:'GeistPixelSquare'; color:var(--red); }
+  .sub2{ margin-top:11px; font-size:13px; color:#c7cad4; } .lock.light .sub2{ color:#4b4742; }
+  .artboard{ position:relative; width:60px; height:60px; flex:0 0 auto; }
+  .artboard .frame{ position:absolute; inset:9px; border:2px solid var(--dark); display:flex; align-items:center; justify-content:center; font:700 19px 'Aldone'; color:var(--dark); }
+  .artboard i{ position:absolute; width:10px; height:10px; background:var(--red); }
+  .artboard i.tl{top:0;left:0}.artboard i.tr{top:0;right:0}.artboard i.bl{bottom:0;left:0}.artboard i.br{bottom:0;right:0}
+
+  /* fonts */
+  .solo{ display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px; }
+  .card{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px; }
+  .card .top{ display:flex; justify-content:space-between; align-items:baseline; gap:8px; margin-bottom:12px; }
+  .card .nm{ font:700 13px ui-sans-serif; color:var(--red); }
+  .card .cat{ font:400 10px ui-monospace,monospace; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+  .card .free{ font:700 9px ui-monospace,monospace; color:#7fcf9b; border:1px solid #2f5e44; border-radius:4px; padding:2px 5px; white-space:nowrap; }
+  .spec .big{ font-size:38px; line-height:1.05; } .spec .mid{ font-size:18px; margin-top:7px; color:#d7d9e2; } .spec .gly{ font-size:16px; margin-top:11px; color:var(--muted); }
+
+  .lockup{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:12px; }
+  .lockup.light{ background:var(--light); }
+  .lockup .pair{ font:600 10px ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+  .lockup .lwm{ font-size:44px; color:var(--light); } .lockup.light .lwm{ color:var(--dark); } .lockup .lwm .r{ color:var(--red); }
+  .lockup .tg{ font-size:13px; margin-top:11px; color:#c7cad4; } .lockup.light .tg{ color:#4b4742; }
+  .pixword{ color:var(--red); font-size:22px; }
+
+  table{ width:100%; border-collapse:collapse; margin-top:6px; font-size:12.5px; }
+  th,td{ text-align:left; padding:8px 9px; border-bottom:1px solid var(--line); }
+  th{ font:700 10px ui-monospace,monospace; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  td .free{ color:#7fcf9b; font-weight:700; }
+  .foot{ margin-top:22px; font-size:12.5px; color:var(--muted); line-height:1.6; } .foot b{ color:var(--light); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Roy Albeck · brand workshop · logos + fonts</div>
+  <h1>Logos (your liked directions, real fonts) + your 8 fonts</h1>
+  <div class="allfree">✓ ALL 8 FONTS FREE · SIL OFL 1.1 · commercial-OK</div>
+
+  <h2 class="sec">Part 1 — Logos · clean wordmark + subtle pixel (back to options 1 &amp; 3)</h2>
+
+  <div class="lock">
+    <div class="tag">01 · clean wordmark (Aldone) + pixel RA badge (Geist Pixel) — your option 1</div>
+    <div class="lockrow"><div class="badge"><span>RA</span></div>
+      <div><div class="wm" style="font-family:'Aldone';font-weight:700">Roy Albeck</div>
+      <div class="sub2" style="font-family:'Hikaru'">// product designer — the link across business, product, users &amp; build</div></div></div>
+  </div>
+  <div class="lock">
+    <div class="tag">02 · clean letters + one pixel accent (Geist Pixel cursor) — your option 3</div>
+    <div class="wm" style="font-family:'Aldone';font-weight:700">Roy Albeck<span class="cursor" style="font-size:38px">▮</span></div>
+    <div class="sub2" style="font-family:'Hikaru'">// ships fast and polished</div>
+  </div>
+  <div class="lock">
+    <div class="tag">03 · Terminal Grotesque — clean + pixel in ONE face (no separate glyph)</div>
+    <div class="wm" style="font-family:'TerminalGrotesque';font-size:56px">Roy <span class="r">Albeck</span></div>
+    <div class="sub2" style="font-family:'Lilex'">// product designer · value across the board</div>
+  </div>
+  <div class="lock">
+    <div class="tag">04 · mono wordmark (Hikaru Mono) + pixel cursor — "digital craft"</div>
+    <div class="wm" style="font-family:'Hikaru';font-size:42px">roy albeck<span class="cursor" style="font-size:32px">▮</span></div>
+    <div class="sub2" style="font-family:'Lilex'">// the link between business · product · users · build</div>
+  </div>
+  <div class="lock light">
+    <div class="tag">05 · clean wordmark (Freak Grotesk) + artboard glyph — light theme</div>
+    <div class="lockrow"><div class="artboard"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i><div class="frame">RA</div></div>
+      <div><div class="wm" style="font-family:'FreakGrotesk';font-size:48px">Roy Albeck</div>
+      <div class="sub2" style="font-family:'Hikaru'">// senior product designer · Tel Aviv → New York</div></div></div>
+  </div>
+
+  <h2 class="sec">Part 2 — Your 8 fonts, solo</h2>
+  <div class="solo">
+    <div class="card"><div class="top"><div><div class="nm">Aldone</div><div class="cat">Display grotesque</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'Aldone'"><div class="big" style="font-weight:700">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@ →</div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Freak Grotesk Next</div><div class="cat">Grotesque display</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'FreakGrotesk'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@ →</div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Terminal Grotesque ★</div><div class="cat">Grotesque · pixel-flavored</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'TerminalGrotesque'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@ →</div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Grotesk812 <span style="color:var(--muted)">(Quarantine)</span></div><div class="cat">Condensed grotesque</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'Grotesk812'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@ →</div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Conta <span style="color:var(--muted)">(Quarantine)</span></div><div class="cat">Text / superfamily</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'Conta'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@ →</div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Conta Mono <span style="color:var(--muted)">(Quarantine)</span></div><div class="cat">Monospace</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'ContaMono'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@ →</div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Bmono</div><div class="cat">Monospace</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'Bmono'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@ →</div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Hikaru Mono</div><div class="cat">Monospace</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'Hikaru'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@ →</div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Lilex (Duo)</div><div class="cat">Mono · coding</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'Lilex'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 != => -></div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Geist Pixel — Square</div><div class="cat">Pixel / bitmap</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'GeistPixelSquare'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@</div></div></div>
+    <div class="card"><div class="top"><div><div class="nm">Geist Pixel — Grid</div><div class="cat">Pixel / bitmap</div></div><span class="free">FREE·OFL</span></div><div class="spec" style="font-family:'GeistPixelGrid'"><div class="big">Roy Albeck</div><div class="mid">Design the whole chain.</div><div class="gly">Aa Gg Rr 0123 &amp;@</div></div></div>
+  </div>
+
+  <h2 class="sec">Part 3 — Combo lockups (clean head + mono/pixel signature)</h2>
+  <div class="lockup"><div class="pair">★ Terminal Grotesque + Lilex + Geist Pixel — strongest balance fit</div><div class="lwm" style="font-family:'TerminalGrotesque'">Roy <span class="r">Albeck</span></div><div class="tg" style="font-family:'Lilex'">// product designer — the link between business, product, users &amp; build <span class="pixword" style="font-family:'GeistPixelSquare'">PIXEL</span></div></div>
+  <div class="lockup"><div class="pair">Freak Grotesk Next + Hikaru Mono</div><div class="lwm" style="font-family:'FreakGrotesk'">Roy <span class="r">Albeck</span></div><div class="tg" style="font-family:'Hikaru'">// value across the board</div></div>
+  <div class="lockup"><div class="pair">Aldone + Bmono + Geist Pixel</div><div class="lwm" style="font-family:'Aldone';font-weight:700">Roy <span class="r">Albeck</span></div><div class="tg" style="font-family:'Bmono'">// ships fast and polished <span class="pixword" style="font-family:'GeistPixelSquare'">RA</span></div></div>
+  <div class="lockup light"><div class="pair">Conta + Geist Pixel — light theme</div><div class="lwm" style="font-family:'Conta'">Roy <span class="r">Albeck</span></div><div class="tg" style="font-family:'ContaMono'">// senior product designer · Tel Aviv → New York</div></div>
+
+  <h2 class="sec">Part 4 — License &amp; price (all free)</h2>
+  <table>
+    <tr><th>Font</th><th>Type</th><th>License / price</th></tr>
+    <tr><td>Aldone</td><td>Display grotesque</td><td class="free">Free · OFL 1.1</td></tr>
+    <tr><td>Bmono</td><td>Monospace</td><td class="free">Free · OFL 1.1</td></tr>
+    <tr><td>Hikaru Mono</td><td>Monospace</td><td class="free">Free · OFL 1.1</td></tr>
+    <tr><td>Lilex</td><td>Mono · coding</td><td class="free">Free · OFL 1.1</td></tr>
+    <tr><td>Freak Grotesk Next</td><td>Grotesque display</td><td class="free">Free · OFL 1.1</td></tr>
+    <tr><td>Geist Pixel (5 variants)</td><td>Pixel</td><td class="free">Free · OFL 1.1 (npm: geist)</td></tr>
+    <tr><td>Quarantine — Conta + Grotesk812</td><td>Collection</td><td class="free">Free · OFL 1.1</td></tr>
+    <tr><td>Terminal Grotesque</td><td>Grotesque · pixel-ish</td><td class="free">Free · OFL 1.1</td></tr>
+  </table>
+
+  <div class="foot">
+    <b>Logos:</b> tell me which lockup (01–05) + which font for the wordmark, and which pixel signature (RA badge / pixel cursor / Terminal-Grotesque-in-one-face). <b>Fonts:</b> all free; <b>Terminal Grotesque</b> is my pick to carry the clean+pixel balance, paired with <b>Lilex</b> or <b>Hikaru</b> mono and <b>Geist Pixel</b> for accents.
+  </div>
+</div>
+</body>
+</html>
