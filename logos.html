@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roy Albeck — more logo options</title>
+<style>
+  @font-face{ font-family:'Aldone'; src:url('fonts/Aldone-Bold.woff2') format('woff2'); font-weight:700; }
+  @font-face{ font-family:'Aldone'; src:url('fonts/Aldone-Regular.woff2') format('woff2'); font-weight:400; }
+  @font-face{ font-family:'FreakGrotesk'; src:url('fonts/FREAKGrotesk-next-BOLD.otf') format('opentype'); }
+  @font-face{ font-family:'TerminalGrotesque'; src:url('fonts/TerminalGrotesque.woff2') format('woff2'); }
+  @font-face{ font-family:'Grotesk812'; src:url('fonts/Grotesk812-CondensedMedium.woff2') format('woff2'); }
+  @font-face{ font-family:'Conta'; src:url('fonts/Conta-Regular.woff2') format('woff2'); }
+  @font-face{ font-family:'Lilex'; src:url('fonts/LilexDuo-Regular.ttf') format('truetype'); }
+  @font-face{ font-family:'GeistPixelSquare'; src:url('fonts/GeistPixel-Square.woff2') format('woff2'); }
+
+  :root{ --dark:#10131C; --light:#FAF8F8; --red:#F0341B; --panel:#181B26; --muted:#9197a8; --line:#262a37; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--dark); color:var(--light); font-family:ui-sans-serif,system-ui,sans-serif; -webkit-font-smoothing:antialiased; padding:30px 20px 80px; }
+  .wrap{ max-width:1100px; margin:0 auto; }
+  .eyebrow{ font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
+  h1{ font-size:28px; letter-spacing:-.02em; margin:12px 0 6px; }
+  .sub{ margin:0 0 10px; color:var(--muted); font-size:15px; max-width:780px; }
+  h2.sec{ font:700 14px ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--light); margin:34px 0 14px; border-top:2px solid var(--red); padding-top:14px; }
+
+  .lock{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:36px 32px; margin-bottom:14px; }
+  .lock.light{ background:var(--light); color:var(--dark); border-color:#e6e3dd; }
+  .tag{ font:600 12px ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:18px; }
+  .lock.light .tag{ color:#8a8478; }
+  .row{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .wm{ font-size:60px; line-height:.92; } .wm .r{ color:var(--red); }
+  .sub2{ margin-top:12px; font-size:17px; color:#c7cad4; font-family:'Lilex'; } .lock.light .sub2{ color:#4b4742; }
+
+  /* pixel signatures */
+  .badge{ width:76px; height:76px; border-radius:16px; background:var(--red); display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .badge span{ font-family:'GeistPixelSquare'; font-size:30px; color:#fff; }
+  .badge.dk{ background:transparent; border:2px solid var(--red); } .badge.dk span{ color:var(--red); }
+  .badge.sm{ width:46px; height:46px; border-radius:10px; } .badge.sm span{ font-size:18px; }
+  .cur{ font-family:'GeistPixelSquare'; color:var(--red); }
+  .pdot{ display:inline-block; width:16px; height:16px; background:var(--red); margin-left:6px; vertical-align:baseline; }
+  .punder{ display:flex; gap:5px; margin-top:10px; } .punder i{ width:13px; height:13px; background:var(--red); display:block; }
+  .artboard{ position:relative; width:74px; height:74px; flex:0 0 auto; }
+  .artboard .frame{ position:absolute; inset:11px; border:2px solid currentColor; display:flex; align-items:center; justify-content:center; font:700 22px 'Aldone'; }
+  .artboard i{ position:absolute; width:11px; height:11px; background:var(--red); } .artboard i.tl{top:0;left:0}.artboard i.tr{top:0;right:0}.artboard i.bl{bottom:0;left:0}.artboard i.br{bottom:0;right:0}
+  .mono{ width:74px; height:74px; border:2px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; font:700 26px 'Aldone'; position:relative; flex:0 0 auto; }
+  .mono::after{ content:''; position:absolute; right:-3px; top:-3px; width:12px; height:12px; background:var(--red); }
+  .stack .wm{ font-size:46px; line-height:.86; }
+
+  .foot{ margin-top:24px; font-size:14px; color:var(--muted); line-height:1.65; } .foot b{ color:var(--light); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Roy Albeck · more logo options · clean wordmark + subtle pixel (your direction)</div>
+  <h1>More logo / glyph takes</h1>
+  <p class="sub">All in the lane you liked — clean wordmark + a small, refined, non-gaming pixel signature — in your real fonts. Grouped by the type of signature. Generated RA glyphs are coming separately in chat.</p>
+
+  <h2 class="sec">A · wordmark + pixel RA badge (your option 1)</h2>
+  <div class="lock"><div class="tag">A1 · Aldone + red RA badge (left)</div><div class="row"><div class="badge"><span>RA</span></div><div><div class="wm" style="font-family:'Aldone';font-weight:700">Roy Albeck</div><div class="sub2">// product designer — the link across business, product, users &amp; build</div></div></div></div>
+  <div class="lock"><div class="tag">A2 · Grotesk812 condensed + red RA badge</div><div class="row"><div class="badge"><span>RA</span></div><div class="wm" style="font-family:'Grotesk812';font-size:66px">Roy Albeck</div></div></div>
+  <div class="lock"><div class="tag">A3 · Freak Grotesk + small inline RA badge</div><div class="row"><div class="wm" style="font-family:'FreakGrotesk'">Roy Albeck</div><div class="badge sm"><span>RA</span></div></div></div>
+  <div class="lock"><div class="tag">A4 · Terminal Grotesque + outline RA badge</div><div class="row"><div class="badge dk"><span>RA</span></div><div class="wm" style="font-family:'TerminalGrotesque';font-size:66px">Roy <span class="r">Albeck</span></div></div></div>
+
+  <h2 class="sec">B · wordmark + one pixel accent (your option 3)</h2>
+  <div class="lock"><div class="tag">B1 · Aldone + pixel cursor</div><div class="wm" style="font-family:'Aldone';font-weight:700">Roy Albeck<span class="cur" style="font-size:46px">▮</span></div></div>
+  <div class="lock"><div class="tag">B2 · Aldone + pixel period (the dot is a pixel)</div><div class="wm" style="font-family:'Aldone';font-weight:700">Roy Albeck<span class="pdot"></span></div></div>
+  <div class="lock"><div class="tag">B3 · Grotesk812 + pixel underline</div><div class="wm" style="font-family:'Grotesk812';font-size:64px">Roy Albeck</div><div class="punder"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div class="lock light"><div class="tag">B4 · Conta + pixel cursor (light, editorial)</div><div class="wm" style="font-family:'Conta'">Roy Albeck<span class="cur" style="font-size:40px">▮</span></div></div>
+
+  <h2 class="sec">C · wordmark + refined glyph</h2>
+  <div class="lock"><div class="tag">C1 · Aldone + artboard glyph (pixel corner handles)</div><div class="row"><div class="artboard"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i><div class="frame">RA</div></div><div class="wm" style="font-family:'Aldone';font-weight:700">Roy Albeck</div></div></div>
+  <div class="lock"><div class="tag">C2 · Freak Grotesk + circular RA monogram (pixel accent)</div><div class="row"><div class="mono">RA</div><div class="wm" style="font-family:'FreakGrotesk'">Roy Albeck</div></div></div>
+
+  <h2 class="sec">D · avatar / stacked marks</h2>
+  <div class="lock"><div class="tag">D1 · stacked wordmark + pixel underline (compact / social)</div><div class="stack"><div class="wm" style="font-family:'Aldone';font-weight:700">Roy<br>Albeck</div><div class="punder"><i></i><i></i><i></i><i></i><i></i></div></div></div>
+  <div class="lock"><div class="tag">D2 · RA badge solo (the avatar everywhere)</div><div class="row"><div class="badge" style="width:96px;height:96px;border-radius:20px"><span style="font-size:40px">RA</span></div><div class="badge dk" style="width:96px;height:96px;border-radius:20px"><span style="font-size:40px">RA</span></div></div></div>
+
+  <div class="foot">
+    <b>Tell me the lockup codes you like</b> (e.g. "A1 + B2", or "C1 with Terminal Grotesque") — wordmark font, signature type (RA badge / pixel accent / glyph), and placement. I'll combine your picks into 2–3 tight finalists. The generated RA glyph options will land in chat shortly to pair against these.
+  </div>
+</div>
+</body>
+</html>
