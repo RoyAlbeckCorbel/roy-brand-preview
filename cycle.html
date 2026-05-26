@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roy Albeck — live wordmark cycle</title>
+<style>
+  @font-face { font-family: 'Lilex'; src: url('fonts/LilexDuo-Regular.ttf') format('truetype'); }
+  @font-face { font-family: 'GeistPixelSquare'; src: url('fonts/GeistPixel-Square.woff2') format('woff2'); }
+
+  :root { --dark:#10131C; --light:#FAF8F8; --red:#F0341B; --muted:#9197a8; --line:#262a37; --panel:#181B26; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--dark); color:var(--light); font-family: ui-sans-serif, system-ui, sans-serif; padding: 36px 20px 80px; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1000px; margin: 0 auto; }
+  .eyebrow { font: 600 11px/1 ui-monospace, monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 25px; margin: 10px 0 6px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 28px; max-width: 700px; font-size: 14px; line-height: 1.55; }
+  h2.lbl { font: 600 11px/1 ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px; }
+
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 28px; margin-bottom: 16px; position: relative; }
+  .panel.hero { padding: 70px 40px; text-align: center; }
+
+  .wordmark { font: 400 72px/1 'Lilex', ui-monospace, monospace; color: var(--light); display: inline-flex; align-items: center; gap: 4px; }
+  .slot { position: relative; display: inline-block; width: 48px; height: 52px; vertical-align: middle; }
+  .slot > div { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .28s ease; }
+  .slot > div.on { opacity: 1; }
+  .bar { width: 14px; height: 48px; background: var(--red); animation: blink .9s steps(2, start) infinite; }
+  @keyframes blink { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }
+  .faceimg { width: 44px; height: 44px; image-rendering: pixelated; border-radius: 4px; object-fit: cover; }
+  .gly { font: 700 48px/1 'GeistPixelSquare', ui-monospace, monospace; color: var(--red); }
+
+  .alts .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .alts .opt { background: var(--dark); border: 1px solid var(--line); border-radius: 10px; padding: 12px; width: 84px; height: 84px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+  .alts .opt .icon { font: 700 28px/1 'GeistPixelSquare', ui-monospace, monospace; color: var(--red); display: flex; align-items: center; justify-content: center; height: 40px; }
+  .alts .opt .icon img { width: 40px; height: 40px; image-rendering: pixelated; border-radius: 4px; }
+  .alts .opt small { font: 600 9px ui-monospace, monospace; color: var(--muted); letter-spacing: .05em; }
+
+  .scale .demos { display: flex; gap: 36px; align-items: flex-end; flex-wrap: wrap; }
+  .scale .demo { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .scale .demo small { font: 600 10px ui-monospace, monospace; color: var(--muted); }
+  .lock-sm { font-family: 'Lilex', ui-monospace, monospace; display: inline-flex; align-items: center; color: var(--light); line-height: 1; }
+  .lock-sm .bar-sm { background: var(--red); display: inline-block; margin-left: 3px; animation: blink .9s steps(2, start) infinite; }
+
+  .foot { margin-top: 22px; font-size: 13.5px; color: var(--muted); line-height: 1.7; } .foot b { color: var(--light); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Live wordmark · indicator cycles every ~2.5s</div>
+  <h1>The wordmark, alive</h1>
+  <p class="sub">The indicator cycles three modes of the same brand: <b>blinking cursor</b> (alive) → <b>your pixel face</b> (you) → <b>chevron glyph</b> (designer). The face here is a working placeholder until <b>ROY-66</b> lands the finalized twin face.</p>
+
+  <div class="panel hero">
+    <h2 class="lbl" style="position:absolute;top:16px;left:20px;margin:0">Cycle · live</h2>
+    <div class="wordmark">
+      <span>roy albeck</span>
+      <span class="slot">
+        <div class="state-cursor"><span class="bar"></span></div>
+        <div class="state-face"><img class="faceimg" src="face.png" alt="face"></div>
+        <div class="state-glyph"><span class="gly">&gt;</span></div>
+      </span>
+    </div>
+  </div>
+
+  <div class="panel alts">
+    <h2 class="lbl">Alternate symbols you can swap into any slot</h2>
+    <div class="row">
+      <div class="opt"><div class="icon"><img src="face.png" alt="face"></div><small>face</small></div>
+      <div class="opt"><div class="icon">&gt;</div><small>chevron</small></div>
+      <div class="opt"><div class="icon">&gt;&gt;</div><small>double</small></div>
+      <div class="opt"><div class="icon">▸</div><small>play</small></div>
+      <div class="opt"><div class="icon">RA</div><small>monogram</small></div>
+      <div class="opt"><div class="icon">●</div><small>dot</small></div>
+      <div class="opt"><div class="icon">▮</div><small>block</small></div>
+      <div class="opt"><div class="icon">+</div><small>plus</small></div>
+    </div>
+  </div>
+
+  <div class="panel scale">
+    <h2 class="lbl">Holds at small sizes · favicon test</h2>
+    <div class="demos">
+      <div class="demo">
+        <div class="lock-sm" style="font-size:64px"><span>roy albeck</span><span class="bar-sm" style="width:12px;height:44px"></span></div>
+        <small>64px · large</small>
+      </div>
+      <div class="demo">
+        <div class="lock-sm" style="font-size:32px"><span>roy albeck</span><span class="bar-sm" style="width:7px;height:22px"></span></div>
+        <small>32px · header</small>
+      </div>
+      <div class="demo">
+        <div class="lock-sm" style="font-size:18px"><span>roy albeck</span><span class="bar-sm" style="width:4px;height:12px"></span></div>
+        <small>18px · small UI</small>
+      </div>
+      <div class="demo">
+        <div class="lock-sm" style="font-size:12px"><span>roy albeck</span><span class="bar-sm" style="width:3px;height:8px"></span></div>
+        <small>12px · favicon</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <b>Tell me which 3 symbols to cycle</b> — e.g. "blinking | + face + chevron," or swap one for RA / dot / play / double-chevron. And whether the timing feels right (faster / slower). I'll lock the cycle and we keep iterating chevron-frame on the side.
+  </div>
+</div>
+
+<script>
+  const slot = document.querySelector('.slot');
+  const states = Array.from(slot.children);
+  let i = 0;
+  function tick() {
+    states.forEach(s => s.classList.remove('on'));
+    states[i].classList.add('on');
+    i = (i + 1) % states.length;
+  }
+  tick();
+  setInterval(tick, 2500);
+</script>
+</body>
+</html>
